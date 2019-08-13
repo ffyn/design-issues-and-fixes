@@ -12,48 +12,90 @@
         box-sizing: border-box;
       }
       .container {
-        display: flex;
         margin: 0px auto;
         border: 5px solid red;
-        height: 70vh;
-        width: 70vw;
+        width: 300px;
       }
       .box {
+        border: 2px solid black;
         width: 400px;
-        border: 5px solid greenyellow;
       }
-      .other-box {
-        background: rgba(0, 0, 0, 0.4);
-        width: 40%;
-        border: 10px solid fuchsia;
-        border-right: 0;
+      .example {
+        padding: 20px 20px 20px 0px;
       }
-      .avatar {
-        display: flex;
-        width: 100px;
-        height: 100px;
-        background: rebeccapurple;
-        border-radius: 50%;
+      p {
+        margin-bottom: 10px;
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <div class="box" style="display: flex;">
-        <div style="display:flex; border: 5px solid slateblue; flex: 0 1 auto;">
-          <div
-            class="problem"
-            style="display:flex; border: 10px solid sandybrown;"
-          >
-            <div class="avatar"></div>
-            <div style="border: 10px solid red; word-wrap: break-word;">
-              hola hoala mundo que tal como estas
+    <div style="padding: 20px">
+      <p style="font-size: 20px; font-weight: 900;">Design bugs</p>
+      <p style="font-size: 18px;">Check out the examples and look for the elements with the ids "problem" and "problem-fixed" in the index.html</p>
+      <div style="width: 50%">
+        <div class="example">
+          <p>First bug example: Text not wrapping</p>
+          <div class="container" style="display: flex;">
+            <div class="box" style="display: flex;">
+                A div with a long text
+            </div>
+            <div id="problem" class="box" style="display: flex;">
+              <div style="border: 5px solid slateblue;">
+                <div
+                  style="display:flex;"
+                >
+                  Another div with a long text not wrapping
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container" style="display: flex;">
+            <div class="box" style="display: flex;">
+                A div with a long text
+            </div>
+            <div id="problem-fixed" class="box">
+              <div style="border: 5px solid slateblue;">
+                <div
+                  style="display:flex;"
+                >
+                  Another div with a long text wrapping
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="example">
+          <p>Second bug example: Icon shrinking</p>
+          <div class="container" style="display: flex;">
+            <div>
+              A div before an icon that should be 50px*50px without flex-shrink: 0
+            </div>
+            <div id="problem" style="height: 50px; width: 50px;">
+              <svg height="100%" viewBox="0 0 24 24" width="100%">
+                <path
+                  d="M19.399 17.996l-1.4 1.4-6-6-5.993 6.008-1.415-1.415 6.008-5.993-6-6 1.4-1.4 6 6 6-6 1.4 1.4-6 6z"
+                  fill="#FFA500"
+                  fillRule="nonzero"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="container" style="display: flex;">
+            <div>
+              A div before an icon that should be 50px*50px with flex-shrink: 0
+            </div>
+            <div id="problem-fixed" style="flex-shrink: 0; height: 50px; width: 50px;">
+              <svg height="100%" viewBox="0 0 24 24" width="100%">
+                <path
+                  d="M19.399 17.996l-1.4 1.4-6-6-5.993 6.008-1.415-1.415 6.008-5.993-6-6 1.4-1.4 6 6 6-6 1.4 1.4-6 6z"
+                  fill="#FFA500"
+                  fillRule="nonzero"
+                />
+              </svg>
             </div>
           </div>
         </div>
       </div>
-      <div class="other-box"></div>
-      <div class="other-box"></div>
     </div>
     <script src="./main.js"></script>
   </body>
