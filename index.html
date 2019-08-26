@@ -26,6 +26,9 @@
       p {
         margin-bottom: 10px;
       }
+      button {
+        border: 1px solid black;
+      }
     </style>
   </head>
   <body>
@@ -37,7 +40,7 @@
           <p>First bug example: Text not wrapping</p>
           <div class="container" style="display: flex;">
             <div class="box" style="display: flex;">
-                A div with a long text
+                A div with a text
             </div>
             <div id="problem" class="box" style="display: flex;">
               <div style="border: 5px solid slateblue;">
@@ -51,7 +54,7 @@
           </div>
           <div class="container" style="display: flex;">
             <div class="box" style="display: flex;">
-                A div with a long text
+                A div with a text
             </div>
             <div id="problem-fixed" class="box">
               <div style="border: 5px solid slateblue;">
@@ -93,6 +96,19 @@
                 />
               </svg>
             </div>
+          </div>
+        </div>
+        <div class="example">
+          <p>Third bug example: margin auto + display flex not working</p>
+          <div class="container" style="display: flex; justify-content: center;">
+            <button id="problem" style="margin: auto">
+              Should be centered with margin: auto
+            </button>
+          </div>
+          <div class="container" style="display: flex; justify-content: center;">
+            <button id="problem-fixed">
+              Should be centered without margin: auto
+            </button>
           </div>
         </div>
       </div>
