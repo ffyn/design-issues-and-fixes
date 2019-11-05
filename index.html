@@ -38,31 +38,56 @@
       <div style="width: 50%">
         <div class="example">
           <p>First bug example: Text not wrapping</p>
-          <div class="container" style="display: flex;">
-            <div class="box" style="display: flex;">
-                A div with a text
-            </div>
-            <div id="problem" class="box" style="display: flex;">
-              <div style="border: 5px solid slateblue;">
-                <div
-                  style="display:flex;"
-                >
-                  Another div with a long text not wrapping
+          <div style="width: 300px; border: 2px solid blue;">
+            <div style="display: flex; align-items: center">
+              <div id="problem">
+                <div style="border: 2px solid green;">title</div>
+                <div style="display: flex; border: 2px solid red;">
+                  <svg height="24px" viewBox="0 0 24 24" width="24px">
+                    <path
+                      d="M19.399 17.996l-1.4 1.4-6-6-5.993 6.008-1.415-1.415 6.008-5.993-6-6 1.4-1.4 6 6 6-6 1.4 1.4-6 6z"
+                      fill="#FFA500"
+                      fillRule="nonzero"
+                    />
+                  </svg>
+                  <div>A large div containing a long text in IE not wrapping</div>              
                 </div>
+              </div>
+              <div>
+                <svg height="24px" viewBox="0 0 24 24" width="24px">
+                  <path
+                    d="M19.399 17.996l-1.4 1.4-6-6-5.993 6.008-1.415-1.415 6.008-5.993-6-6 1.4-1.4 6 6 6-6 1.4 1.4-6 6z"
+                    fill="#FFA500"
+                    fillRule="nonzero"
+                  />
+                </svg>
               </div>
             </div>
           </div>
-          <div class="container" style="display: flex;">
-            <div class="box" style="display: flex;">
-                A div with a text
-            </div>
-            <div id="problem-fixed" class="box">
-              <div style="border: 5px solid slateblue;">
-                <div
-                  style="display:flex;"
-                >
-                  Another div with a long text wrapping
+          <br/>
+          <div style="width: 300px; border: 2px solid blue;">
+            <div style="display: flex; align-items: center">
+              <div id="problem-fixed" style="width: calc(100% - 24px);">
+                <div style="border: 2px solid green;">title</div>
+                <div style="display: flex; border: 2px solid red;">
+                  <svg height="24px" viewBox="0 0 24 24" width="24px">
+                    <path
+                      d="M19.399 17.996l-1.4 1.4-6-6-5.993 6.008-1.415-1.415 6.008-5.993-6-6 1.4-1.4 6 6 6-6 1.4 1.4-6 6z"
+                      fill="#FFA500"
+                      fillRule="nonzero"
+                    />
+                  </svg>
+                  <div>A large div containing a long text in IE not wrapping</div>              
                 </div>
+              </div>
+              <div>
+                <svg height="24px" viewBox="0 0 24 24" width="24px">
+                  <path
+                    d="M19.399 17.996l-1.4 1.4-6-6-5.993 6.008-1.415-1.415 6.008-5.993-6-6 1.4-1.4 6 6 6-6 1.4 1.4-6 6z"
+                    fill="#FFA500"
+                    fillRule="nonzero"
+                  />
+                </svg>
               </div>
             </div>
           </div>
