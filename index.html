@@ -38,37 +38,64 @@
       <div style="width: 50%">
         <div class="example">
           <p>First bug example: Text not wrapping</p>
-          <div class="container" style="display: flex;">
-            <div class="box" style="display: flex;">
-                A div with a text
-            </div>
-            <div id="problem" class="box" style="display: flex;">
-              <div style="border: 5px solid slateblue;">
-                <div
-                  style="display:flex;"
-                >
-                  Another div with a long text not wrapping
+          <p>Solution: set the width of the non flex parent container</p>
+          <div style="width: 300px; border: 2px solid blue;">
+            <div style="display: flex; align-items: center">
+              <div id="problem">
+                <div style="border: 2px solid green;">title</div>
+                <div style="display: flex; border: 2px solid red;">
+                  <svg height="24px" viewBox="0 0 24 24" width="24px">
+                    <path
+                      d="M19.399 17.996l-1.4 1.4-6-6-5.993 6.008-1.415-1.415 6.008-5.993-6-6 1.4-1.4 6 6 6-6 1.4 1.4-6 6z"
+                      fill="#FFA500"
+                      fillRule="nonzero"
+                    />
+                  </svg>
+                  <div>A large div containing a long text in IE not wrapping</div>              
                 </div>
+              </div>
+              <div>
+                <svg height="24px" viewBox="0 0 24 24" width="24px">
+                  <path
+                    d="M19.399 17.996l-1.4 1.4-6-6-5.993 6.008-1.415-1.415 6.008-5.993-6-6 1.4-1.4 6 6 6-6 1.4 1.4-6 6z"
+                    fill="#FFA500"
+                    fillRule="nonzero"
+                  />
+                </svg>
               </div>
             </div>
           </div>
-          <div class="container" style="display: flex;">
-            <div class="box" style="display: flex;">
-                A div with a text
-            </div>
-            <div id="problem-fixed" class="box">
-              <div style="border: 5px solid slateblue;">
-                <div
-                  style="display:flex;"
-                >
-                  Another div with a long text wrapping
+          <br/>
+          <div style="width: 300px; border: 2px solid blue;">
+            <div style="display: flex; align-items: center">
+              <div id="problem-fixed" style="width: calc(100% - 24px);">
+                <div style="border: 2px solid green;">title</div>
+                <div style="display: flex; border: 2px solid red;">
+                  <svg height="24px" viewBox="0 0 24 24" width="24px">
+                    <path
+                      d="M19.399 17.996l-1.4 1.4-6-6-5.993 6.008-1.415-1.415 6.008-5.993-6-6 1.4-1.4 6 6 6-6 1.4 1.4-6 6z"
+                      fill="#FFA500"
+                      fillRule="nonzero"
+                    />
+                  </svg>
+                  <div>A large div containing a long text in IE not wrapping</div>              
                 </div>
+              </div>
+              <div>
+                <svg height="24px" viewBox="0 0 24 24" width="24px">
+                  <path
+                    d="M19.399 17.996l-1.4 1.4-6-6-5.993 6.008-1.415-1.415 6.008-5.993-6-6 1.4-1.4 6 6 6-6 1.4 1.4-6 6z"
+                    fill="#FFA500"
+                    fillRule="nonzero"
+                  />
+                </svg>
               </div>
             </div>
           </div>
         </div>
         <div class="example">
           <p>Second bug example: Icon shrinking</p>
+          <p>Solution: add flex-shrink: 0 on the div containing the icon</p>
           <div class="container" style="display: flex;">
             <div>
               A div before an icon that should be 50px*50px without flex-shrink: 0
@@ -83,6 +110,7 @@
               </svg>
             </div>
           </div>
+          <br/>
           <div class="container" style="display: flex;">
             <div>
               A div before an icon that should be 50px*50px with flex-shrink: 0
@@ -99,12 +127,14 @@
           </div>
         </div>
         <div class="example">
-          <p>Third bug example: margin auto + display flex not working</p>
+          <p>Third bug example: margin auto + justify-content not working</p>
+          <p>Solution: remove margin-auto and use only justify-content</p>
           <div class="container" style="display: flex; justify-content: center;">
             <button id="problem" style="margin: auto">
               Should be centered with margin: auto
             </button>
           </div>
+          <br/>
           <div class="container" style="display: flex; justify-content: center;">
             <button id="problem-fixed">
               Should be centered without margin: auto
