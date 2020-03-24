@@ -94,7 +94,18 @@
           </div>
         </div>
         <div class="example">
-          <p>Second bug example: Icon shrinking</p>
+          <p>Second bug example: Text not wrapping without spaces</p>
+          <p>Solution: set the css attribute word-break: break-all</p>
+          <div id="problem" style="width: 300px; border: 2px solid blue;">
+            <div>ALargeDivContaining ALongTextWrappingEvenWithoutSpacesThatAreNotSomethingVeryUsual</div>              
+          </div>
+          <br/>
+          <div id="problem-fixed" style="width: 300px; border: 2px solid blue; word-wrap: break-word;">
+            <div>ALargeDivContaining ALongTextWrappingEvenWithoutSpacesThatAreNotSomethingVeryUsual</div>              
+          </div>
+        </div>
+        <div class="example">
+          <p>Third bug example: Icon shrinking</p>
           <p>Solution: add flex-shrink: 0 on the div containing the icon</p>
           <div class="container" style="display: flex;">
             <div>
@@ -127,7 +138,7 @@
           </div>
         </div>
         <div class="example">
-          <p>Third bug example: margin auto + justify-content not working</p>
+          <p>Fourth bug example: margin auto + justify-content not working</p>
           <p>Solution: remove margin-auto and use only justify-content</p>
           <div class="container" style="display: flex; justify-content: center;">
             <button id="problem" style="margin: auto">
