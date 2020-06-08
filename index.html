@@ -12,8 +12,8 @@
         box-sizing: border-box;
       }
       .container {
-        margin: 0px auto;
-        border: 5px solid red;
+        margin: 4px auto;
+        border: 3px solid red;
         width: 300px;
       }
       .box {
@@ -21,7 +21,7 @@
         width: 400px;
       }
       .example {
-        padding: 20px 20px 20px 0px;
+        padding: 10px 20px 10px 0px;
       }
       p {
         margin-bottom: 10px;
@@ -29,21 +29,27 @@
       button {
         border: 1px solid black;
       }
+      .textbox {
+        background-color: yellow;
+      }
     </style>
   </head>
   <body>
-    <div style="padding: 20px">
+    <div style="padding: 20px;">
       <p style="font-size: 20px; font-weight: 900;">Design bugs</p>
-      <p style="font-size: 18px;">Check out the examples and look for the elements with the ids "problem" and "problem-fixed" in the index.html</p>
-      <div style="width: 50%">
+      <p style="font-size: 18px;">
+        Check out the examples and look for the elements with the ids "problem"
+        and "problem-fixed" in the index.html
+      </p>
+      <div style="width: 50%;">
         <div class="example">
-          <p>First bug example: Text not wrapping</p>
+          <p><strong>First bug example: Text not wrapping</strong></p>
           <p>Solution: set the width of the non flex parent container</p>
-          <div style="width: 300px; border: 2px solid blue;">
-            <div style="display: flex; align-items: center">
+          <div class="container">
+            <div style="display: flex; align-items: center;">
               <div id="problem">
                 <div style="border: 2px solid green;">title</div>
-                <div style="display: flex; border: 2px solid red;">
+                <div style="display: flex; border: 2px solid blue;">
                   <svg height="24px" viewBox="0 0 24 24" width="24px">
                     <path
                       d="M19.399 17.996l-1.4 1.4-6-6-5.993 6.008-1.415-1.415 6.008-5.993-6-6 1.4-1.4 6 6 6-6 1.4 1.4-6 6z"
@@ -51,7 +57,9 @@
                       fillRule="nonzero"
                     />
                   </svg>
-                  <div>A large div containing a long text in IE not wrapping</div>              
+                  <div>
+                    A large div containing a long text in IE not wrapping
+                  </div>
                 </div>
               </div>
               <div>
@@ -65,12 +73,11 @@
               </div>
             </div>
           </div>
-          <br/>
-          <div style="width: 300px; border: 2px solid blue;">
-            <div style="display: flex; align-items: center">
-              <div id="problem-fixed" style="width: calc(100% - 24px);">
+          <div class="container">
+            <div style="display: flex; align-items: center;">
+              <div id="problem-fixed" style="width: 100%;">
                 <div style="border: 2px solid green;">title</div>
-                <div style="display: flex; border: 2px solid red;">
+                <div style="display: flex; border: 2px solid blue;">
                   <svg height="24px" viewBox="0 0 24 24" width="24px">
                     <path
                       d="M19.399 17.996l-1.4 1.4-6-6-5.993 6.008-1.415-1.415 6.008-5.993-6-6 1.4-1.4 6 6 6-6 1.4 1.4-6 6z"
@@ -78,7 +85,9 @@
                       fillRule="nonzero"
                     />
                   </svg>
-                  <div>A large div containing a long text in IE not wrapping</div>              
+                  <div>
+                    A large div containing a long text in IE not wrapping
+                  </div>
                 </div>
               </div>
               <div>
@@ -94,22 +103,36 @@
           </div>
         </div>
         <div class="example">
-          <p>Second bug example: Text not wrapping without spaces</p>
+          <p>
+            <strong
+              >Second bug example: Text not wrapping without spaces</strong
+            >
+          </p>
           <p>Solution: set the css attribute word-break: break-all</p>
-          <div id="problem" style="width: 300px; border: 2px solid blue;">
-            <div>ALargeDivContaining ALongTextWrappingEvenWithoutSpacesThatAreNotSomethingVeryUsual</div>              
+          <div class="container">
+            <div id="problem">
+              <div>
+                ALargeDivContaining
+                ALongTextWrappingEvenWithoutSpacesThatAreNotSomethingVeryUsual
+              </div>
+            </div>
           </div>
-          <br/>
-          <div id="problem-fixed" style="width: 300px; border: 2px solid blue; word-wrap: break-word;">
-            <div>ALargeDivContaining ALongTextWrappingEvenWithoutSpacesThatAreNotSomethingVeryUsual</div>              
+          <div class="container">
+            <div id="problem-fixed" style="word-wrap: break-word;">
+              <div>
+                ALargeDivContaining
+                ALongTextWrappingEvenWithoutSpacesThatAreNotSomethingVeryUsual
+              </div>
+            </div>
           </div>
         </div>
         <div class="example">
-          <p>Third bug example: Icon shrinking</p>
+          <p><strong>Third bug example: Icon shrinking</strong></p>
           <p>Solution: add flex-shrink: 0 on the div containing the icon</p>
           <div class="container" style="display: flex;">
             <div>
-              A div before an icon that should be 50px*50px without flex-shrink: 0
+              A div before an icon that should be 50px*50px without flex-shrink:
+              0
             </div>
             <div id="problem" style="height: 50px; width: 50px;">
               <svg height="100%" viewBox="0 0 24 24" width="100%">
@@ -121,12 +144,14 @@
               </svg>
             </div>
           </div>
-          <br/>
           <div class="container" style="display: flex;">
             <div>
               A div before an icon that should be 50px*50px with flex-shrink: 0
             </div>
-            <div id="problem-fixed" style="flex-shrink: 0; height: 50px; width: 50px;">
+            <div
+              id="problem-fixed"
+              style="flex-shrink: 0; height: 50px; width: 50px;"
+            >
               <svg height="100%" viewBox="0 0 24 24" width="100%">
                 <path
                   d="M19.399 17.996l-1.4 1.4-6-6-5.993 6.008-1.415-1.415 6.008-5.993-6-6 1.4-1.4 6 6 6-6 1.4 1.4-6 6z"
@@ -138,18 +163,114 @@
           </div>
         </div>
         <div class="example">
-          <p>Fourth bug example: margin auto + justify-content not working</p>
+          <p>
+            <strong
+              >Fourth bug example: margin auto + justify-content not
+              working</strong
+            >
+          </p>
           <p>Solution: remove margin-auto and use only justify-content</p>
-          <div class="container" style="display: flex; justify-content: center;">
-            <button id="problem" style="margin: auto">
+          <div
+            class="container"
+            style="display: flex; justify-content: center;"
+          >
+            <button id="problem" style="margin: auto;">
               Should be centered with margin: auto
             </button>
           </div>
-          <br/>
-          <div class="container" style="display: flex; justify-content: center;">
+          <div
+            class="container"
+            style="display: flex; justify-content: center;"
+          >
             <button id="problem-fixed">
               Should be centered without margin: auto
             </button>
+          </div>
+        </div>
+        <div class="example">
+          <p>
+            <strong>
+              Fifth bug example: Making a div fit its content does not work with
+              width fit-content on IE
+            </strong>
+          </p>
+          <p>
+            Solution: use inline-block or inline-flex if you need flex behavior
+          </p>
+          <div class="container">
+            <div id="problem" class="textbox" style="width: fit-content;">
+              A div with a text
+            </div>
+          </div>
+          <div class="container">
+            <div
+              id="problem-fixed"
+              class="textbox"
+              style="display: inline-flex;"
+            >
+              A div with a text
+            </div>
+          </div>
+        </div>
+        <div class="example">
+          <p>
+            <strong>
+              Sixth bug example: Flex 1 component not visible because having no
+              height
+            </strong>
+          </p>
+          <p>
+            Solution: Use <strong>flex: 1 1 auto</strong> instead of flex: 1
+          </p>
+          <div
+            class="container"
+            style="display: flex; flex-direction: column; overflow-y: auto;"
+          >
+            <div
+              id="problem"
+              style="
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+                overflow-y: auto;
+                border: 2px solid blue;
+              "
+            >
+              <div>
+                A div with a text
+              </div>
+              <div>
+                A div with a text
+              </div>
+              <div>
+                A div with a text
+              </div>
+            </div>
+          </div>
+          <div
+            class="container"
+            style="display: flex; flex-direction: column; overflow-y: auto;"
+          >
+            <div
+              id="problem-fixed"
+              style="
+                display: flex;
+                flex: 1 1 auto;
+                flex-direction: column;
+                overflow-y: auto;
+                border: 2px solid blue;
+              "
+            >
+              <div>
+                A div with a text
+              </div>
+              <div>
+                A div with a text
+              </div>
+              <div>
+                A div with a text
+              </div>
+            </div>
           </div>
         </div>
       </div>
