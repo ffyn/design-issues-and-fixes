@@ -29,6 +29,9 @@
       button {
         border: 1px solid black;
       }
+      .textbox {
+        background-color: yellow;
+      }
     </style>
   </head>
   <body>
@@ -182,6 +185,31 @@
             <button id="problem-fixed">
               Should be centered without margin: auto
             </button>
+          </div>
+        </div>
+        <div class="example">
+          <p>
+            <strong>
+              Fifth bug example: Making a div fit its content does not work with
+              width fit-content on IE
+            </strong>
+          </p>
+          <p>
+            Solution: use inline-block or inline-flex if you need flex behavior
+          </p>
+          <div class="container">
+            <div id="problem" class="textbox" style="width: fit-content;">
+              A div with a text
+            </div>
+          </div>
+          <div class="container">
+            <div
+              id="problem-fixed"
+              class="textbox"
+              style="display: inline-flex;"
+            >
+              A div with a text
+            </div>
           </div>
         </div>
       </div>
