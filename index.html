@@ -212,6 +212,67 @@
             </div>
           </div>
         </div>
+        <div class="example">
+          <p>
+            <strong>
+              Sixth bug example: Flex 1 component not visible because having no
+              height
+            </strong>
+          </p>
+          <p>
+            Solution: Use <strong>flex: 1 1 auto</strong> instead of flex: 1
+          </p>
+          <div
+            class="container"
+            style="display: flex; flex-direction: column; overflow-y: auto;"
+          >
+            <div
+              id="problem"
+              style="
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+                overflow-y: auto;
+                border: 2px solid blue;
+              "
+            >
+              <div>
+                A div with a text
+              </div>
+              <div>
+                A div with a text
+              </div>
+              <div>
+                A div with a text
+              </div>
+            </div>
+          </div>
+          <div
+            class="container"
+            style="display: flex; flex-direction: column; overflow-y: auto;"
+          >
+            <div
+              id="problem-fixed"
+              style="
+                display: flex;
+                flex: 1 1 auto;
+                flex-direction: column;
+                overflow-y: auto;
+                border: 2px solid blue;
+              "
+            >
+              <div>
+                A div with a text
+              </div>
+              <div>
+                A div with a text
+              </div>
+              <div>
+                A div with a text
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <script src="./main.js"></script>
