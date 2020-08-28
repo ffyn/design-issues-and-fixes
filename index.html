@@ -32,6 +32,11 @@
       .textbox {
         background-color: yellow;
       }
+      .scrollSolution::after{
+        content: '';
+        display: block;
+        padding-bottom: 24px;
+      }
     </style>
   </head>
   <body>
@@ -249,7 +254,7 @@
           </div>
           <div
             class="container"
-            style="display: flex; flex-direction: column; overflow-y: auto;"
+            style="display: flex; flex-direction: column; height: 50px; padding-bottom: 24px; overflow-y: auto;"
           >
             <div
               id="problem-fixed"
@@ -270,6 +275,99 @@
               <div>
                 A div with a text
               </div>
+            </div>
+          </div>
+        </div>
+        <div class="example">
+          <p>
+            <strong>
+              Seventh bug example: scroll issues on IE
+              height
+            </strong>
+          </p>
+          <p>
+            Solution: Use <strong>:after {
+              content: '';
+              display: block;
+              padding-bottom: ${3 * grid.unit}px;
+            }
+          </strong>
+          </p>
+          <div
+            class="container"
+            style="display: flex; flex-direction: column; height: 50px; overflow-y: auto;"
+          >
+            <div
+              id="problem"
+              style="
+                display: flex;
+                flex: 1 1 auto;
+                flex-direction: column;
+                border: 2px solid blue;
+                box-sizing: border-box;
+                padding-bottom: 24px; 
+              "
+            >
+              <div >
+                A div with a text
+              </div>
+              <div >
+                A div with a text
+              </div>
+              <div >
+                A div with a text
+              </div>
+              <div >
+                A div with a text
+              </div>
+              <div >
+                A div with a text
+              </div>
+              <div >
+                A div with a text
+              </div>
+              <div >
+                A div with a text
+              </div>
+            </div>
+          </div>
+          <div
+            class="container"
+            style="display: flex; flex-direction: column; height: 50px; overflow-y: auto;"
+          >
+            <div
+              id="problem-fixed"
+              class="scrollSolution"
+              style="
+                display: flex;
+                flex: 1 1 auto;
+                flex-direction: column;
+                border: 2px solid blue;
+                box-sizing: border-box;
+                padding-bottom: 24px;
+              "
+            >
+            <div >
+              A div with a text
+            </div>
+            <div >
+              A div with a text
+            </div>
+            <div >
+              A div with a text
+            </div>
+            <div >
+              A div with a text
+            </div>
+            <div >
+              A div with a text
+            </div>
+            <div >
+              A div with a text
+            </div>
+            <div >
+              A div with a text
+            </div>
             </div>
           </div>
         </div>
