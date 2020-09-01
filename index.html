@@ -281,12 +281,11 @@
         <div class="example">
           <p>
             <strong>
-              Seventh bug example: scroll issues on IE
-              height
+              Seventh bug example: Inside a scrollable div on IE the padding bottom collapses
             </strong>
           </p>
           <p>
-            Solution: Use <strong>:after {
+            Solution: Use on the div inside the scrollable one <strong>:after {
               content: '';
               display: block;
               padding-bottom: ${3 * grid.unit}px;
@@ -295,17 +294,13 @@
           </p>
           <div
             class="container"
-            style="display: flex; flex-direction: column; height: 50px; overflow-y: auto;"
+            style="height: 50px; overflow-y: auto; padding-bottom: 24px;"
           >
             <div
               id="problem"
               style="
-                display: flex;
-                flex: 1 1 auto;
-                flex-direction: column;
                 border: 2px solid blue;
                 box-sizing: border-box;
-                padding-bottom: 24px; 
               "
             >
               <div >
@@ -332,19 +327,14 @@
             </div>
           </div>
           <div
-            class="container"
-            style="display: flex; flex-direction: column; height: 50px; overflow-y: auto;"
+            class="container scrollSolution"
+            style="height: 50px; overflow-y: auto;"
           >
             <div
               id="problem-fixed"
-              class="scrollSolution"
               style="
-                display: flex;
-                flex: 1 1 auto;
-                flex-direction: column;
                 border: 2px solid blue;
                 box-sizing: border-box;
-                padding-bottom: 24px;
               "
             >
             <div >
